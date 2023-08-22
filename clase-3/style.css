@@ -1,0 +1,63 @@
+h1{
+    color: red;
+}
+*{
+    font-family:sans-serif;
+}
+/* 
+SELECTOR UNIVERSAL
+
+*{
+    color: blueviolet
+}
+ */
+
+.titulo{
+    color: rgb(0, 255, 0);
+    font-size: 30px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    text-align: center;
+    text-shadow: 0px 0px 20px rgb(251, 255, 0),
+                20px 20px 3px red;
+}
+
+.titulo-dos{
+    color: blue;
+}
+
+.sombra{
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    text-shadow: 0px 0px 3px rgb(3, 220, 253);
+    font-size: 30px;
+}
+
+.caja{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(89, 89, 89);
+    border-radius: 20px;
+    box-shadow: 
+    inset 0px 0px 30px 0px black,
+     300px 300px 30px -20px black;
+    margin-left:200px;
+    margin-top: 200px;
+    color: white;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+
+.box{
+    background-color: rgb(119, 119, 119);
+    color:rgb(30, 30, 30);
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;
+    box-shadow: 0 0 5px black;
+}

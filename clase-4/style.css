@@ -1,0 +1,28 @@
+.padre{
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    /* JUSTIFY CONTENTENT AJUSTA O MUEVE EN EL EJE X CUANDO FLEX DIRECTION ES ROW*/
+    justify-content: center;
+
+    /* ALING ITEMS AJUSTA O MUEVE EN EL EJE Y CUANDO FLEX DIRECTION ES ROW*/
+    align-items: flex-start;
+    height: 400px;
+    gap: 20px;
+}
+.hijo{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.hijo:nth-child(1){
+    background-color: blueviolet;
+}
+
+.hijo:nth-child(2){
+    background-color: aqua;
+}
+.hijo:nth-child(3){
+    background-color: rgb(255, 242, 0);
+}
