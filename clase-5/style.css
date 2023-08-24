@@ -82,4 +82,37 @@
     line-height: 40px;
     font-weight: 700;
     letter-spacing: 1px;
+    margin: 40px 0;
+}
+
+.historiesContainer{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.historiesSection{
+    margin: 0 20px;
+}
+
+/* SI EL ANCHO ES MENOR A 1020 pixeles ENTONCES ACTIVARE ESTE CODIGO CSS */
+@media screen and (max-width: 1020px){
+    .historiesContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .historyCard{
+        width: 686px;
+    }
+    .historyContent .ratingContainer{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 775px){
+    .historyCard{
+        width: 100%;
+    }
+    .title{
+        font-size: 24px;
+    }
 }
