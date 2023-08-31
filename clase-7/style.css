@@ -14,6 +14,28 @@
     --sombreado-boton: 4px -4px 24px 0px rgba(94, 71, 71, 0.407);
 }
 
+@keyframes aparecer{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aparecer-de-derecha {
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -42,16 +64,34 @@ header .logoContainer img{
     font-size: 16px;
     font-weight: 700;
     border: none;
+
+}
+
+.btn:hover{
+    cursor: pointer;
 }
 
 .btn-login{
     border: 1px solid var(--color-terciario);
 }
 
+.btn-login:hover{
+    background-color:  #554005 ;
+    color: white;
+    text-shadow: 0 0 3px white;
+    transition: 500ms ease-in-out;
+}
+
 .btn-register{
     background-color: var(--color-principal);
     color: white;
     box-shadow: var(--sombreado-boton);
+}
+
+.btn-register:hover{
+    background-color: #554005 ;
+    text-shadow: 0 0 3px white;
+    transition: 500ms ease-in-out;
 }
 
 .btn-dropdown-menu{
@@ -72,6 +112,8 @@ header .logoContainer img{
     justify-content: center;
     align-items: center;
     flex: 1;
+    animation-name: aparecer-de-derecha;
+    animation-duration: 500ms;
 }
 
 .imagenHeroNube{
@@ -91,6 +133,8 @@ header .logoContainer img{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    animation-name: aparecer;
+    animation-duration: 500ms;
 }
 
 .heroTitle .title{
