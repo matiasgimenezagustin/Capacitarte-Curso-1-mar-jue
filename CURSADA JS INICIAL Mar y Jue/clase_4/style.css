@@ -1,0 +1,13 @@
+.caja{
+    background-color: rgb(209, 209, 209);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.box{
+    background-color: black;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+}
