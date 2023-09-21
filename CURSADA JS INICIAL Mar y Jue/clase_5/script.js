@@ -35,6 +35,12 @@ const products = [
         id: 5,
         categoria: 'tablet'
     },
+    {
+        nombre: 'Tablet 7"',
+        precio: 27000,
+        id: 'x24',
+        categoria: 'tablet'
+    }
 ]
 
 /* Agregar un elemento a un array */
@@ -76,9 +82,16 @@ const posicionProducto = products.findIndex((producto)=>{
     return producto.id == 1
 })
 
-/* products.splice(posicionProducto, 1) */
-delete products[posicionProducto ]
+products.splice(posicionProducto, 1,  {
+    nombre: 'Tablet 7"',
+    precio: 27000,
+    id: 6,
+    categoria: 'tablet'
+},
+)
+/* delete products[posicionProducto ] */
 
+/* SPLICE recibe desde donde empezar a eliminar, cuantos y a quien quiero agregar (si no queremos agregar a nadie lo dejamos vacio) */
 
 
 
@@ -106,3 +119,29 @@ delete products[posicionProducto ]
 
 
 console.log(products)
+
+
+/* Dado el array de productos hacer las sig funciones (Las funciones deben ser escritas en flecha)
+eliminarProductoPorId(id) recibe un id y elimina el producto del array
+agregarProducto(producto) recibe un producto y lo agregega al array de productos
+
+*/
+
+
+const eliminarProductoPorId = (id) =>{
+    let posProductoAEliminar = products.findIndex((product) => product.id == id)
+    products.splice(posProductoAEliminar, 2)
+}
+
+eliminarProductoPorId(2)
+/* eliminarProductoPorId('x24') */
+/* const agregarProducto = (producto) =>{
+    products.push(producto)
+    console.log('Producto agregado')
+}
+agregarProducto({
+    nombre: 'Tablet 10"',
+    precio: 40000,
+    id: 10,
+    categoria: 'tablet'
+}) */
