@@ -75,4 +75,7 @@ Decime si existe el producto con una categoria 'tecnologia' //some
 Dame a todos los productos que tengan samsung en el nombre  //filter
 Decime si todos los productos tienen un precio mayor a 13000 //every
 Dame al producto con id 3 //find
+Obtener la posicion del elemento que tenga id 4
+otener todos los productos que sean tv pero su precio sea mayor a 35000
 */
+const productosEntre30000y60000 =  products.filter(producto => producto.precio > 30000 && producto.precio < 60000) 
