@@ -125,6 +125,22 @@ const renderProductDetail = () =>{
     }
     else{
         const btnAgregar = document.getElementById('btn-agregar-producto')
+        const btnRestar = document.getElementById('btn-eliminar-producto')
+
+
+        /* Accion de boton de resta */
+        btnRestar.addEventListener('click', ()=>{
+            const productFromCart = cart.find(product => product.id == productFound.id)
+            if(productFromCart.cantidad == 1){
+                let posicionProducto = cart.findIndex(product => product.id == productFound.id)
+                cart.splice(posicionProducto, 1)
+            }else{
+                productFromCart.cantidad = productFromCart.cantidad - 1
+            }
+            actualizarCarrito()
+        })
+
+        /* Accion de boton de suma */
         btnAgregar.addEventListener('click', ()=>{
             const productFromCart = cart.find(product => product.id == productFound.id)
             productFromCart.cantidad = productFromCart.cantidad + 1
