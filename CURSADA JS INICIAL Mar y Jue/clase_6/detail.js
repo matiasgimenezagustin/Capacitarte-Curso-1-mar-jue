@@ -89,18 +89,53 @@ const productFound = products.find(product => product.id == productId)
 
 const resultHTML = document.getElementById('result')
 
-resultHTML.innerHTML = `
-    <h2>${productFound.nombre}</h2>
-    <div>Precio: $${productFound.precio}</div>
-    <div>${productFound.categoria}</div>
-    <p>${productFound.description}</p>
-    <button id='btn-comprar'>Comprar</button>
-`
-const btnComprar = document.getElementById('btn-comprar')
+const renderProductDetail = () =>{
+    let controls = `<button id='btn-comprar'>Comprar</button>`
 
-btnComprar.addEventListener('click', () =>{
-    /* Esta es la accion de darle click al boton comprar */
-    cart.push(productFound)
-    localStorage.setItem('cart', JSON.stringify(cart))
-})
+    /* Si ya esta comprado el producto */
+    if(cart.some(product => product.id == productFound.id)){
+        const productFromCart = cart.find(product => product.id == productFound.id)
+        controls = `
+            <div>
+                <button id='btn-eliminar-producto'>-</button>
+                <span>${productFromCart.cantidad}</span>
+                <button id='btn-agregar-producto'>+</button>
+            </div>
+        `
+    }
+    resultHTML.innerHTML = `
+        <h2>${productFound.nombre}</h2>
+        <div>Precio: $${productFound.precio}</div>
+        <div>${productFound.categoria}</div>
+        <p>${productFound.description}</p>
+        ${controls}
+    `
+
+    /* Si el producto ya esta comprado entonces no quiero que se llame al boton de comprar */
+    if(!cart.some(product => product.id == productFound.id)){
+        const btnComprar = document.getElementById('btn-comprar')
+
+        btnComprar.addEventListener('click', () =>{
+            /* Esta es la accion de darle click al boton comprar */
+            productFound.cantidad = 1
+            cart.push(productFound)
+            localStorage.setItem('cart', JSON.stringify(cart))
+            renderProductDetail()
+        })
+    
+    }
+    else{
+        const btnAgregar = document.getElementById('btn-agregar-producto')
+        btnAgregar.addEventListener('click', ()=>{
+            const productFromCart = cart.find(product => product.id == productFound.id)
+            productFromCart.cantidad = productFromCart.cantidad + 1
+            localStorage.setItem('cart', JSON.stringify(cart))
+            renderProductDetail()
+        })
+    }
+
+}
+
+renderProductDetail()
+
 
