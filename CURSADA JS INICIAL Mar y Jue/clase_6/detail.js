@@ -119,8 +119,7 @@ const renderProductDetail = () =>{
             /* Esta es la accion de darle click al boton comprar */
             productFound.cantidad = 1
             cart.push(productFound)
-            localStorage.setItem('cart', JSON.stringify(cart))
-            renderProductDetail()
+            actualizarCarrito()
         })
     
     }
@@ -129,8 +128,7 @@ const renderProductDetail = () =>{
         btnAgregar.addEventListener('click', ()=>{
             const productFromCart = cart.find(product => product.id == productFound.id)
             productFromCart.cantidad = productFromCart.cantidad + 1
-            localStorage.setItem('cart', JSON.stringify(cart))
-            renderProductDetail()
+            actualizarCarrito()
         })
     }
 
@@ -139,3 +137,7 @@ const renderProductDetail = () =>{
 renderProductDetail()
 
 
+const actualizarCarrito = () =>{
+    localStorage.setItem('cart', JSON.stringify(cart))
+    renderProductDetail()
+}
