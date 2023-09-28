@@ -24,3 +24,7 @@ form div{
     flex-direction: column;
     gap: 30px
 }
+
+.error{
+    color: red;
+}
