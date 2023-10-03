@@ -28,3 +28,25 @@ form div{
 .error{
     color: red;
 }
+
+
+
+.modal-contenedor{
+    
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.407);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background-color: white;
+    width: 250px;
+}
+
+.ocultar{
+    display: none;
+}
